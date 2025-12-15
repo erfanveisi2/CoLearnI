@@ -1,0 +1,107 @@
+.footer {
+  background-color: var(--background-dark);
+  color: var(--text-on-dark);
+  padding: 60px 0; /* Reduced padding */
+  position: relative;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px; /* Reduced gap */
+}
+
+.infoSection {
+  flex: 1;
+}
+
+.title {
+  font-size: 2.5rem; /* Reduced font size */
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 30px 0; /* Reduced margin */
+}
+.title span {
+  color: var(--accent-primary);
+}
+
+.subText {
+  color: #aaa;
+  max-width: 300px;
+  margin-bottom: 30px; /* Reduced margin */
+  font-size: 0.9rem;
+}
+
+.contactDetails p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+.contactDetails .phone, .contactDetails .email {
+  font-weight: 600;
+}
+
+.formSection {
+  flex: 1;
+}
+
+.inputGroup {
+  margin-bottom: 20px; /* Reduced margin */
+}
+.inputGroup label {
+  display: block;
+  margin-bottom: 8px;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+.inputGroup input {
+  width: 100%;
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 14px; /* Reduced padding */
+  color: white;
+  font-size: 0.9rem;
+}
+
+.sendButton {
+  background-color: var(--text-on-dark);
+  color: var(--text-primary);
+  border: none;
+  border-radius: 50px;
+  padding: 14px 28px; /* Reduced padding */
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.scrollToTopButton {
+  position: absolute;
+  bottom: 20px; /* Adjusted position */
+  right: 20px;
+  background-color: white;
+  color: var(--text-primary);
+  border: none;
+  width: 50px; /* Smaller button */
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* --- ADD MEDIA QUERIES --- */
+@media (max-width: 768px) {
+  .footerContainer {
+    flex-direction: column; /* Stack columns */
+    gap: 30px;
+  }
+  .title {
+    font-size: 2rem; /* Further reduce font size */
+  }
+}

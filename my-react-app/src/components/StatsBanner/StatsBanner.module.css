@@ -1,0 +1,158 @@
+.statsSection {
+  padding: 40px 0;
+  /* Ensure the section takes full width */
+  width: 100%;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+  border-top: 1px solid var(--card-border);
+  border-bottom: 1px solid var(--card-border);
+  margin-bottom: 60px;
+}
+
+.marqueeContent {
+  display: inline-block;
+  animation: scroll-left 40s linear infinite;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-12.5%);
+  }
+}
+
+.marqueeContent span {
+  margin-right: 20px;
+}
+
+.separator::after {
+  content: '•';
+  margin-left: 20px;
+  color: var(--accent-primary);
+}
+
+/* --- Styles for the main content box --- */
+.statsContainer {
+  background-color: var(--accent-light);
+  border-radius: 20px;
+  padding: 40px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Make sure it's centered within the .container div from the parent */
+  max-width: 1200px; /* Match the global container width */
+  margin-left: auto; /* Center it */
+  margin-right: auto; /* Center it */
+  width: 100%; /* Take available width within the parent .container */
+}
+
+.joinInfo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.iconWrapper {
+  background-color: var(--accent-primary);
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.joinTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.stats {
+  display: flex;
+  gap: 60px;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statNumber {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.statLabel {
+  display: block;
+  color: var(--text-secondary);
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 992px) {
+  .statsContainer {
+    padding: 30px 40px;
+  }
+  .stats {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .statsContainer {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+    text-align: center;
+    /* Ensure it still takes width and is centered */
+    width: 100%; /* Take width within its parent .container padding */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .joinInfo {
+    justify-content: center;
+  }
+
+  .joinTitle {
+    font-size: 1.5rem;
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .statItem {
+    flex-basis: auto;
+    min-width: 80px;
+  }
+
+  .statNumber {
+    font-size: 1.8rem;
+  }
+
+  .statLabel {
+    font-size: 0.8rem;
+  }
+
+  .marquee {
+    margin-bottom: 40px;
+  }
+}

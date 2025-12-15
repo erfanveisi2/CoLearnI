@@ -1,0 +1,98 @@
+.coursesPage {
+    padding: 60px 0;
+    min-height: 70vh;
+  }
+  
+  .pageHeader {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .pageHeader h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .pageHeader p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+  }
+  
+  .courseGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .courseCard {
+    background-color: white;
+    border: 1px solid var(--card-border);
+    border-radius: 15px;
+    padding: 30px;
+    text-decoration: none;
+    color: var(--text-primary);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    position: relative;
+  }
+
+  .premiumBadge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #6f42c1;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(111, 66, 193, 0.3);
+  }
+  
+  .courseCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+  
+  .cardIcon {
+    font-size: 3rem;
+    color: var(--accent-primary); /* Default icon color */
+    margin-bottom: 20px;
+  }
+  
+  .cardTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+  }
+  
+  .cardDescription {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    flex-grow: 1; /* Pushes the button to the bottom */
+    margin-bottom: 20px;
+  }
+  
+  .startButton {
+    font-weight: 600;
+    color: var(--accent-primary);
+    text-decoration: none;
+    display: inline-block;
+    align-self: flex-start; /* Aligns button to the left */
+  }
+  
+  .startButton::after {
+    content: ' →';
+    transition: transform 0.2s ease;
+    display: inline-block;
+  }
+  
+  .courseCard:hover .startButton::after {
+    transform: translateX(4px);
+  }

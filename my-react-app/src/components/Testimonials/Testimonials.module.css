@@ -1,0 +1,70 @@
+.testimonialsSection {
+  padding: 80px 0;
+}
+
+.header, .preTitle, .title { text-align: center; }
+.preTitle { color: var(--text-secondary); }
+.title { font-size: 3rem; font-weight: 700; margin: 10px 0 40px 0; }
+
+.grid {
+  display: grid;
+  /* This will center the single card horizontally */
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  border: 2px solid var(--accent-primary);
+  border-radius: 20px;
+  background-color: white;
+  padding: 8px;
+  position: relative;
+  /* Give the card a defined width */
+  width: 350px;
+  max-width: 100%;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  border: 2px solid var(--accent-primary);
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.imageContainer {
+  background-color: var(--accent-light);
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 20px 20px 0 20px;
+}
+.imageContainer img {
+  width: 100%;
+  display: block;
+  filter: grayscale(100%);
+}
+
+.textContainer {
+  padding: 24px;
+  background-color: var(--background-light);
+  margin: 0 14px 14px 14px;
+  border-radius: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0 0 15px 0;
+}
+
+.text {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}

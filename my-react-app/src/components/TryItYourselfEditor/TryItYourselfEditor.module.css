@@ -1,0 +1,325 @@
+.editorContainer {
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(118, 75, 162, 0.3) 0%, transparent 50%),
+    linear-gradient(135deg, #1a0f2e 0%, #2d1b4e 50%, #1a0f2e 100%);
+  margin: 40px 0;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 
+    0 20px 60px rgba(102, 126, 234, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.editorContainer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: 
+    radial-gradient(circle, rgba(102, 126, 234, 0.1) 1px, transparent 1px),
+    radial-gradient(circle, rgba(118, 75, 162, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px, 30px 30px;
+  background-position: 0 0, 25px 25px;
+  animation: moveBackground 20s linear infinite;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.editorContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(102, 126, 234, 0.1) 0%, 
+    transparent 30%, 
+    transparent 70%, 
+    rgba(118, 75, 162, 0.1) 100%);
+  pointer-events: none;
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+.editorInner {
+  position: relative;
+  z-index: 1;
+}
+
+.editorTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.editorTitle::before {
+  content: '⚡';
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.8));
+}
+
+.editorWrapper {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.codeArea {
+  flex: 1;
+  background: #1e1e2e;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.codeArea::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: #2d2d44;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+.codeArea::after {
+  content: '●  ●  ●';
+  position: absolute;
+  top: 12px;
+  left: 15px;
+  color: #666;
+  font-size: 12px;
+  letter-spacing: 4px;
+  z-index: 2;
+}
+
+.codeEditor {
+  width: 100%;
+  height: 350px;
+  padding: 55px 20px 20px 20px;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  border: none;
+  resize: none;
+  outline: none;
+  background: #1e1e2e;
+  color: #e0e0e0;
+  tab-size: 4;
+  overflow: auto;
+}
+
+/* Custom scrollbar for code editor */
+.codeEditor::-webkit-scrollbar {
+  width: 8px;
+}
+
+.codeEditor::-webkit-scrollbar-track {
+  background: #1e1e2e;
+}
+
+.codeEditor::-webkit-scrollbar-thumb {
+  background: #3a3a52;
+  border-radius: 4px;
+}
+
+.codeEditor::-webkit-scrollbar-thumb:hover {
+  background: #4a4a62;
+}
+
+.codeEditor::selection {
+  background-color: rgba(102, 126, 234, 0.4);
+}
+
+.outputArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #fafafa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+.outputHeader {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  letter-spacing: 0.3px;
+}
+
+.closeButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px 10px;
+  line-height: 1;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-weight: bold;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.outputFrame {
+  width: 100%;
+  height: 350px;
+  border: none;
+  background-color: white;
+}
+
+.outputText {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #1e1e2e;
+  white-space: pre-wrap;
+  overflow: auto;
+  height: 350px;
+  background: white;
+}
+
+.editorActions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.tryItButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.tryItButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.tryItButton:hover::before {
+  left: 100%;
+}
+
+.tryItButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.tryItButton:active {
+  transform: translateY(0);
+}
+
+.tryItButton:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+}
+
+.loadingText {
+  color: #667eea;
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .editorWrapper {
+    flex-direction: column;
+  }
+
+  .codeEditor,
+  .outputFrame,
+  .outputText {
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .editorContainer {
+    margin: 30px 0;
+    padding: 20px;
+  }
+
+  .editorTitle {
+    font-size: 1.2rem;
+  }
+
+  .editorWrapper {
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .editorActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tryItButton {
+    width: 100%;
+    padding: 12px 24px;
+  }
+
+  .codeEditor,
+  .outputFrame,
+  .outputText {
+    height: 250px;
+  }
+
+  .codeEditor {
+    font-size: 0.85rem;
+    padding: 50px 15px 15px 15px;
+  }
+}

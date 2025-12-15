@@ -1,0 +1,172 @@
+.courseContentSection {
+    line-height: 1.6;
+    color: var(--text-primary);
+    max-width: 900px; /* Constrain content width for readability */
+    margin: 0 auto; /* Center the content */
+  }
+  
+  .sectionTitle {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--text-heading);
+  }
+  
+  .introParagraph {
+    font-size: 1.15rem;
+    margin-bottom: 25px;
+  }
+  
+  .infoBox {
+    background-color: #d9edf7; /* Light blue background */
+    border-left: 6px solid #31708f; /* Darker blue accent */
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .infoBox p {
+    margin: 0;
+    color: #31708f;
+    font-weight: 500;
+  }
+  
+  .progressButton {
+    background-color: #04AA6D; /* W3Schools green */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .progressButton:hover {
+    background-color: #059862;
+  }
+  
+  .subsectionTitle {
+    font-size: 2rem;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: var(--text-heading);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+  }
+  
+  .navigationButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+  }
+  
+  .prevButton, .nextButton {
+    background-color: var(--accent-primary);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .prevButton:hover:not(:disabled), .nextButton:hover:not(:disabled) {
+    background-color: var(--accent-primary-dark);
+  }
+  
+  .prevButton:disabled, .nextButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  
+  /* General paragraph styling */
+  .courseContentSection p {
+    margin-bottom: 1em;
+  }
+  
+  /* Code examples within text */
+  .courseContentSection code {
+    background-color: #f0f0f0;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 0.9em;
+  }
+
+/* Book recommendation styles */
+.separator {
+  margin: 50px 0 30px 0;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+.resourcesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.resourceCard {
+  background: #fff;
+  border: 1px solid var(--card-border);
+  border-top: 4px solid var(--accent-primary); /* Color line at top */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.resourceCard h3 {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.resourceCard ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.resourceCard li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.resourceCard strong {
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .resourcesGrid {
+    grid-template-columns: 1fr; /* Stack on mobile */
+  }
+}
+/* Link styling for resource cards */
+.resourceCard a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Visited links maintain the same color */
+.resourceCard a:visited {
+  color: var(--accent-primary);
+}
+
+/* Hover effect for better UX */
+.resourceCard a:hover {
+  color: var(--accent-primary-dark); /* Slightly darker on hover */
+  text-decoration: underline;
+}

@@ -1,0 +1,134 @@
+.authContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+    min-height: 70vh;
+    background-color: var(--background-light);
+  }
+  
+  .authForm {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .authForm h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .authForm p {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+  }
+  
+  .inputGroup {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .inputGroup label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .inputGroup input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+  
+  .submitButton {
+    background-color: var(--accent-primary);
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #8a7de0;
+  }
+  
+  .switchFormText {
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+  
+  .switchFormText a {
+    color: var(--accent-primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  /* Add this to the end of AuthForm.module.css */
+.errorMessage {
+  color: #d93025; /* A standard error red */
+  background-color: #f8d7da; /* A light red background */
+  border: 1px solid #f5c6cb;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+/* Add this to AuthForm.module.css */
+.successMessage {
+  color: #155724; /* Dark green */
+  background-color: #d4edda; /* Light green background */
+  border: 1px solid #c3e6cb;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Password Requirements */
+.passwordRequirements {
+  margin-top: 12px;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 3px solid #667eea;
+}
+
+.requirementsTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.requirementsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.requirementsList li {
+  font-size: 13px;
+  padding: 4px 0;
+  transition: all 0.2s ease;
+}
+
+.requirementsList .met {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.requirementsList .unmet {
+  color: #6c757d;
+}

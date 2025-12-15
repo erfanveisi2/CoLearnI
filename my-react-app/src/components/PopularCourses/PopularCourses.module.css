@@ -1,0 +1,186 @@
+.coursesSection {
+  padding: 60px 0; /* Reduced padding */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 30px; /* Reduced margin */
+}
+
+.preTitle {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.title {
+  font-size: 2.5rem; /* Reduced font size */
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.title span {
+  /* Placeholder for the purple asterisk icon */
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px; /* Reduced margin */
+  border-bottom: 1px solid var(--card-border);
+  overflow-x: auto; /* Allow horizontal scrolling on small screens */
+  white-space: nowrap; /* Prevent tabs from wrapping */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+.tabs::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 12px 20px; /* Reduced padding */
+  cursor: pointer;
+  font-size: 0.9rem; /* Reduced font size */
+  font-weight: 500;
+  color: var(--text-secondary);
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  flex-shrink: 0; /* Prevent tabs from shrinking */
+}
+
+.tab.active {
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--text-primary);
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Keep auto-fit */
+  gap: 20px; /* Reduced gap */
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.cardLink:hover {
+  transform: translateY(-5px);
+}
+
+.card {
+  border: 1px solid var(--card-border);
+  border-radius: 15px;
+  background-color: white;
+  padding: 20px; /* Reduced padding */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.cardLink:hover .card {
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.cardHeader .tag {
+  display: inline-block;
+  padding: 4px 10px; /* Reduced padding */
+  border-radius: 50px;
+  font-size: 0.75rem; /* Reduced font size */
+  font-weight: 600;
+  border: 1px solid;
+}
+
+.tag.free {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.tag.premium {
+  border-color: #6f42c1;
+  color: #6f42c1;
+}
+
+.cardBody {
+  flex-grow: 1;
+  margin: 15px 0; /* Reduced margin */
+}
+
+.cardTitle {
+  font-size: 1.2rem; /* Reduced font size */
+  margin: 0 0 8px 0;
+}
+
+.cardDescription {
+  color: var(--text-secondary);
+  line-height: 1.5; /* Reduced line height */
+  font-size: 0.85rem; /* Reduced font size */
+}
+
+.cardFooter {
+  border-top: 1px solid var(--card-border);
+  padding-top: 12px; /* Reduced padding */
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem; /* Reduced font size */
+  color: var(--text-secondary);
+  flex-wrap: wrap; /* Allow footer items to wrap */
+  gap: 10px;
+}
+
+.footerItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.exploreContainer {
+  text-align: center;
+  margin-top: 40px; /* Reduced margin */
+}
+
+.exploreButton {
+  background-color: var(--text-primary);
+  color: white;
+  border: none;
+  padding: 14px 28px; /* Reduced padding */
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem; /* Reduced font size */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.exploreButton:hover {
+  transform: scale(1.05);
+}
+
+/* --- ADD MEDIA QUERIES --- */
+@media (max-width: 560px) {
+   .cardGrid {
+     /* Explicitly go to 1 column */
+     grid-template-columns: 1fr;
+   }
+   .tabs {
+     justify-content: flex-start; /* Align tabs left for scrolling */
+   }
+}

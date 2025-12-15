@@ -1,0 +1,52 @@
+:root {
+  --background-light: #f4f4f7;
+  --background-dark: #1a1a1a;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555;
+  --text-on-dark: #f4f4f7;
+  --accent-primary: #a093ff;
+  --accent-light: #e6e3ff;
+  /* New variable for hover states */
+  --accent-primary-dark: #8a7de0; 
+  --card-border: #dcdcdc;
+
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background-color: var(--background-light);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Global container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Global button reset to prevent default white hovers */
+button {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

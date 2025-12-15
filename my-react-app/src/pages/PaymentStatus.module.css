@@ -1,0 +1,80 @@
+.statusContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .successIcon, .cancelIcon, .errorIcon {
+    font-size: 80px;
+    margin-bottom: 20px;
+  }
+  
+  .successIcon {
+    color: #28a745; /* Green */
+  }
+  
+  .cancelIcon, .errorIcon {
+    color: #dc3545; /* Red */
+  }
+  
+  .statusContainer h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .statusContainer p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+  }
+  
+  .backLink {
+    margin-top: 30px;
+    padding: 12px 25px;
+    background: var(--accent-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+  }
+  
+  .backLink:hover {
+    transform: scale(1.05);
+  }
+  
+  .backButton {
+    margin-top: 30px;
+    padding: 12px 25px;
+    background: var(--accent-primary);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .backButton:hover {
+    transform: scale(1.05);
+  }
+  
+  .redirectMessage {
+    color: #28a745;
+    font-weight: 600;
+    margin-top: 10px;
+    animation: pulse 1.5s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }

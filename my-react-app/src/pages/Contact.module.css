@@ -1,0 +1,128 @@
+.contactPage {
+    padding: 60px 0;
+    min-height: 70vh;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  .header p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contentWrapper {
+    display: flex;
+    gap: 40px;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  }
+  
+  .infoWrapper {
+    flex: 1;
+  }
+  .infoWrapper h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+  .infoWrapper p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  .infoList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .infoList li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+  }
+  .infoList li svg {
+    color: var(--accent-primary);
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .formWrapper {
+    flex: 1.2; /* Make form slightly larger */
+  }
+  .inputGroup {
+    margin-bottom: 20px;
+  }
+  .inputGroup label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .inputGroup input,
+  .inputGroup textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: var(--font-main);
+    box-sizing: border-box; /* Ensures padding doesn't break width */
+  }
+  .inputGroup textarea {
+    resize: vertical;
+  }
+  
+  .submitButton {
+    background-color: var(--accent-primary);
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+  }
+  .submitButton:hover {
+    background-color: #8a7de0; /* Darker accent */
+  }
+  .formSuccess {
+    text-align: center;
+    color: #155724; /* Green */
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 20px;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 768px) {
+    .contentWrapper {
+      flex-direction: column;
+      padding: 30px;
+    }
+    .header h1 {
+      font-size: 2.5rem;
+    }
+    .infoWrapper h2 {
+      font-size: 1.8rem;
+    }
+  }

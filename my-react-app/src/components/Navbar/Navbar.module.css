@@ -1,0 +1,193 @@
+.header {
+  position: relative; /* Needed for absolute positioning of mobile menu */
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  z-index: 1001; /* Ensure logo stays above mobile menu */
+}
+
+.logoImage {
+  height: 80px;
+  width: auto;
+}
+
+/* --- DESKTOP LINKS --- */
+.navLinks {
+  display: flex;
+  gap: 30px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  padding: 5px 0; /* Add some clickable area */
+}
+
+.navLink:hover,
+.navLink.active {
+  color: var(--accent-primary);
+}
+
+/* --- AUTH CONTROLS --- */
+.authControls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  white-space: nowrap;
+}
+
+.profileLink, .upgradeLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+  font-size: 0.9rem;
+  padding: 8px 15px;
+}
+.profileLink:hover { color: var(--accent-primary); }
+
+.upgradeLink {
+  color: var(--accent-primary);
+  background-color: var(--accent-light);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+.upgradeLink:hover {
+  background-color: var(--accent-primary);
+  color: white;
+  transform: scale(1.05);
+}
+
+.logoutButton {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 8px 15px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+.logoutButton:hover {
+  background-color: #f1c3c7;
+  transform: scale(1.05);
+}
+
+.joinButtonLink {
+  background-color: var(--accent-primary);
+  color: white !important;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.3s ease;
+  font-size: 0.9rem;
+}
+.joinButtonLink:hover { transform: scale(1.05); }
+
+/* --- HAMBURGER BUTTON --- */
+.hamburgerButton {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  font-size: 28px; /* Adjust size */
+  cursor: pointer;
+  color: var(--text-primary);
+  z-index: 1001; /* Ensure it's above the menu */
+}
+
+/* --- MOBILE MENU PANEL --- */
+.mobileMenu {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  background-color: rgba(255, 255, 255, 0.98); /* Slightly transparent white */
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  padding: 80px 20px 20px; /* Add padding top to avoid overlap with header */
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  overflow-y: auto; /* Allow scrolling if content is long */
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.mobileMenu .navLink { /* Style links in mobile menu */
+  font-size: 1.5rem; /* Larger font size for mobile */
+  padding: 10px 0;
+}
+
+.mobileAuthControls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin-top: 30px; /* Space above auth controls */
+  border-top: 1px solid var(--card-border);
+  padding-top: 30px;
+  width: 80%; /* Limit width of auth controls */
+}
+.mobileMenu .upgradeLink,
+.mobileMenu .profileLink,
+.mobileMenu .logoutButton,
+.mobileMenu .joinButtonLink {
+   width: 100%;
+   justify-content: center; /* Center text/icon */
+   font-size: 1.1rem;
+   padding: 12px 20px;
+}
+
+/* --- MEDIA QUERIES --- */
+@media (max-width: 992px) {
+  .navLinks { gap: 20px; }
+}
+
+@media (max-width: 768px) {
+  /* Hide desktop links, show hamburger */
+  .navLinks { display: none; }
+  .hamburgerButton { display: block; }
+
+  /* Show mobile menu when active */
+  .mobileMenu { display: flex; }
+
+  .logoImage { height: 60px; }
+
+  /* Hide desktop auth controls, rely on mobile menu versions */
+  .authControls { display: none; }
+  .authText { /* Hide text label on mobile in case we show icons only */
+      /* display: none; */
+  }
+}

@@ -1,0 +1,145 @@
+.sidebarNav {
+  padding: 0 15px;
+}
+
+.courseTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.topicList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.topicItem {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between check and link */
+}
+
+.checkButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checked {
+  color: #04AA6D; /* Green for completed */
+  font-size: 1.2rem;
+}
+
+.unchecked {
+  color: #ccc;
+  font-size: 1.2rem;
+}
+
+.unchecked:hover {
+  color: #999;
+}
+
+.topicLink {
+  display: block;
+  flex-grow: 1;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.2s, color 0.2s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topicLink:hover {
+  background-color: #e6e6e6;
+  color: var(--text-primary);
+}
+
+.topicLink.active {
+  background-color: var(--accent-primary);
+  color: white;
+  font-weight: 600;
+}
+
+/* Final Test Section */
+.finalTestSection {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.finalTestButton {
+  width: 100%;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.finalTestButton.enabled {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.finalTestButton.enabled:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+.finalTestButton.disabled {
+  background: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.testIcon {
+  font-size: 1.5rem;
+}
+
+.testText {
+  flex: 1;
+}
+
+.lockIcon {
+  font-size: 1.2rem;
+}
+
+.testHint {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-align: center;
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .finalTestButton {
+    padding: 12px 15px;
+    font-size: 1rem;
+  }
+  
+  .testIcon {
+    font-size: 1.3rem;
+  }
+}
