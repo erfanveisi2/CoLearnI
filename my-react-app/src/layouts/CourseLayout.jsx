@@ -5,14 +5,14 @@ import styles from './CourseLayout.module.css';
 import { useUser } from '../context/UserContext';
 
 const CourseLayout = ({ courseTitle, courseData, courseId, isPremium }) => {
-  const { user, fetchUser } = useUser();
+  const { user, fetchUser, loading } = useUser();
   const [completedTopics, setCompletedTopics] = useState([]);
   const [trackingError, setTrackingError] = useState('');
   const location = useLocation();
 
   // Check if course is premium and user doesn't have access
   const hasPremiumAccess = user && (user.role === 'PAID' || user.role === 'EXPERT');
-  const shouldBlockAccess = isPremium && !hasPremiumAccess;
+  const shouldBlockAccess = isPremium && !hasPremiumAccess && !loading;
   
   // Debug logging
   useEffect(() => {
@@ -82,6 +82,17 @@ const CourseLayout = ({ courseTitle, courseData, courseId, isPremium }) => {
       console.error(err);
     }
   };
+
+  // Show loading state while checking user authentication
+  if (loading && isPremium) {
+    return (
+      <div className={styles.coursePageContainer}>
+        <div className={styles.premiumBlockContainer}>
+          <div className={styles.spinner}></div>
+        </div>
+      </div>
+    );
+  }
 
   // If course is premium and user doesn't have access, show upgrade message
   if (shouldBlockAccess) {

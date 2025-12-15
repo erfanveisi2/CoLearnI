@@ -334,8 +334,8 @@ WHERE OrderDate >= '2024-01-01' AND OrderDate < '2025-01-01';`}
       <ul className={styles.list}>
         <li>✅ <strong>Use indexes:</strong> Columns used in WHERE clauses should be indexed</li>
         <li>✅ <strong>Be specific:</strong> More specific conditions = faster queries</li>
-        <li>✅ <strong>Avoid functions on columns:</strong> <code>WHERE YEAR(OrderDate) = 2024</code> is slower than <code>WHERE OrderDate >= '2024-01-01'</code></li>
-        <li>❌ <strong>Avoid LIKE with leading %:</strong> <code>WHERE Name LIKE '%son'</code> cannot use indexes</li>
+        <li>✅ <strong>Avoid functions on columns:</strong> <code>WHERE YEAR(OrderDate) = 2024</code> is slower than <code>WHERE OrderDate &gt;= &apos;2024-01-01&apos;</code></li>
+        <li>❌ <strong>Avoid LIKE with leading %:</strong> <code>WHERE Name LIKE &apos;%son&apos;</code> cannot use indexes</li>
       </ul>
 
       <h2 className={styles.subsectionTitle}>Common WHERE Mistakes</h2>
